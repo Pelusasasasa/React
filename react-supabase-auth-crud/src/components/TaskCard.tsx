@@ -14,12 +14,13 @@ export const TaskCard = ({ task }) => {
 
 
   return (
-     <div key={task.id}>
-        <h1>{task.name}</h1>
+     <div key={task.id} className='card card-body mb-2'>
+        <h1 className='h5'>{`${task.id}. ${task.name}`}</h1>
+        <p>{task.done ? 'Done ✔️' : 'Not Done ❌'}</p>
         <p>{JSON.stringify(task.done)}</p>
-        <div>
-            <button onClick={handleDelete}>Delete</button>
-            <button onClick={handleDone}>Done</button>
+        <div className='ms-auto'>
+            <button className='btn btn-danger btn-sm me-1' onClick={handleDelete}>Delete</button>
+            <button className='btn btn-secondary btn-sm' onClick={handleDone}>Done</button>
         </div>
     </div>
   )

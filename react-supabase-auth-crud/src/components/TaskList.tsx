@@ -3,15 +3,20 @@ import { useTasks } from '../context/TaskContext';
 import { TaskCard } from './TaskCard';
 
 interface Props {
-    tasks: [];
-    getTasks: () => Promise<void>;
+    done: boolean;
 }
 
-export const TaskList = () => {
-    const { tasks, getTasks, loading } = useTasks();
+interface UseTasks {
+    tasks: [];
+    getTasks: () => Promise<void>;
+    loading: boolean;
+}
+
+export const TaskList = ({done = false}: Props) => {
+    const { tasks, getTasks, loading } = useTasks<UseTasks>();
     useEffect(() => {
-        getTasks()
-    }, []);
+        getTasks(done)
+    }, [done]);
 
     if(loading) return <h1>Loading...</h1>;
 

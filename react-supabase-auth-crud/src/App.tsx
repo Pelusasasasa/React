@@ -7,6 +7,7 @@ import { NotFound } from './pages/NotFound';
 
 import { supabase } from './supabase/client';
 import { useEffect } from 'react';
+import { Navbar } from './components/Navbar';
 
 function App() {
 
@@ -24,11 +25,14 @@ function App() {
 
   return (
       <div>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='*' element={<NotFound/>}/>
+        <Navbar/>
+        <div className="container mt-5">
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='*' element={<NotFound/>}/>
         </Routes>
+        </div>
       </div>
   )
 }

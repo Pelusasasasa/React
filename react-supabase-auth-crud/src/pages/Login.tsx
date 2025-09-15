@@ -20,11 +20,13 @@ export const Login = () => {
     }
 
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <input type="email" value={email} onChange={changeEmail} name="email" placeholder="agustinlorenzatto@gmail.com" id="" />
-            <button>Send</button>
-        </form>
+    <div className="row pt-4">
+        <div className="col-md-4 offset-md-4">
+            <form onSubmit={handleSubmit} className="card card-body">
+                <input type="email" value={email} className="form-control mb-2" onChange={changeEmail} name="email" placeholder="agustinlorenzatto@gmail.com" id="" />
+                <button className="btn btn-primary">Send</button>
+            </form>
+        </div>
     </div>
   )
 }

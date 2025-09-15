@@ -11,9 +11,9 @@ export const TaskForm = () => {
         addTask(taskName);
     }
   return (
-    <form onSubmit={handleSubmit}>
-        <input type="text" name="taskName" value={taskName} placeholder='Write a Task Name' onChange={e => setTaskName(e.target.value)}/>
-        <button disabled={adding}>{adding ? 'Adding...' : 'Add Task'}</button>
+    <form onSubmit={handleSubmit} className='card card-body'>
+        <input type="text" name="taskName" value={taskName} className='form-control mb-2' placeholder='Write a Task Name' onChange={e => setTaskName(e.target.value)}/>
+        <button disabled={adding} className='btn btn-sm btn-primary'>{adding ? 'Adding...' : 'Add Task'}</button>
     </form>
   )
 }
